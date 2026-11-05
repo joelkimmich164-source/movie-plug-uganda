@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: movie-plug-admin-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: OWNER_EMAIL
+        sync: false
+      - key: OWNER_PASSWORD_HASH
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
