@@ -1,7 +1,5 @@
-name: Deploy Movie Plug to Pages
+name: Deploy Movie Plug safe preview to Pages
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -23,6 +21,6 @@ jobs:
           enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: public-preview
       - id: deployment
         uses: actions/deploy-pages@v4
